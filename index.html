@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>사유림 출판 도서 검색 도우미</title>
+  <meta name="description" content="출판 도서를 제목, 저자, 출판사, ISBN으로 검색하고 서점으로 바로 이동하는 도서 검색 도우미">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <section class="hero">
+    <span class="eyebrow">✦ 출간 도서를 한곳에서 찾기</span>
+    <h1>사유림 출판 도서 검색 도우미</h1>
+    <p class="subtitle">
+      제목 일부 · 저자명 · 출판사 · ISBN으로 출간 도서를 검색하고<br>
+      YES24 · 교보문고 · 알라딘으로 바로 이동할 수 있습니다.
+    </p>
+  </section>
+
+  <section class="search-panel">
+    <div class="search-row">
+      <input id="searchInput" type="search"
+        placeholder="예: 수보 / 앵작가 / 아자수학 / 사유림 / 무음 / 검정고시"
+        autocomplete="off" aria-label="출판 도서 검색">
+      <button id="searchBtn" type="button">도서 찾기</button>
+    </div>
+    <div class="chips">
+      <span class="chips-label">빠른 검색</span>
+      <button class="chip" data-q="류은정">류은정</button>
+      <button class="chip" data-q="아자">아자</button>
+      <button class="chip" data-q="수보">수보</button>
+      <button class="chip" data-q="앵작가">앵작가</button>
+      <button class="chip" data-q="아자수학">아자수학</button>
+      <button class="chip" data-q="엉뚱섬책방">엉뚱섬책방</button>
+      <button class="chip" data-q="사유림">사유림</button>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <span id="resultCount"></span>
+    <button id="clearBtn" type="button">전체 보기</button>
+  </div>
+
+  <section id="results" class="results" aria-live="polite"></section>
+
+  <p class="footer">
+    제공된 「도서정보목록_URL정리(1).xlsx」의 출판사·저자·ISBN 및 서점 URL 정보를 기준으로 구성했습니다.<br>
+    서점 링크가 확인되지 않은 경우 해당 버튼은 비활성화됩니다.
+  </p>
+</main>
+<script src="books-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
